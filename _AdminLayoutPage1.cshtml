@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Include Custom CSS -->
+    <link rel="stylesheet" href="~/styles/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header text-center" style="padding-top: 30px;">
+                <!-- Add padding from the top -->
+                <h3>Dashboard</h3>
+                <hr style="border-top: 1px solid #fff;"> <!-- White line -->
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active" style="margin-bottom: 10px;">
+                    <!-- Add margin-bottom -->
+                    <a href="#packageDropdown" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <span style="padding-left: 10px;">Package Details</span>
+                    </a>
+                    <ul class="collapse list-unstyled" id="packageDropdown">
+                        <li>
+                            <a href="@Url.Action("AddPkg", "Admin")" style="padding-left: 30px;">Add Package</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("PackageList", "Admin")" style="padding-left: 30px;">Show Package</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active" style="margin-bottom: 10px;">
+                    <!-- Add margin-bottom -->
+                    <a href="#serviceDropdown" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <span style="padding-left: 10px;">Service Details</span>
+                    </a>
+                    <ul class="collapse list-unstyled" id="serviceDropdown">
+                        <li>
+                            <a href="@Url.Action("Services", "Admin")" style="padding-left: 30px;">Add Service</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("ServiceList", "Admin")" style="padding-left: 30px;">Show Service</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Logout button -->
+                <li>
+                    <a href="@Url.Action("Logout", "Admin")" style="padding-left: 20px;">Logout</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Include jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Include Custom JS -->
+    <script src="~/Scripts/script.js"></script>
+</body>
+</html>

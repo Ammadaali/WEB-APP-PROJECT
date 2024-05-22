@@ -1,0 +1,78 @@
+﻿@model Web_Project_Tour_and_Travel.Models.Pkg
+
+@{
+    ViewBag.Title = "Update Package";
+    Layout = "~/Views/Shared/_AdminLayoutPage1.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/custom-style.css">
+<style>
+    /* Custom styles */
+    .container {
+        padding-top: 50px; /* Adjust the value to your preference */
+    }
+
+    /* Optional: Additional styles for form elements */
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    /* Optional: Style for submit button */
+    .btn-add {
+        background-color: #DC3545; /* Red color, you can change it */
+        color: white;
+    }
+
+    .control-label {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    /* Optional: Style for success message */
+    .success-message {
+        color: #28A745; /* Green color, you can change it */
+    }
+
+    /* Left padding for Update Package heading */
+    .update-heading {
+        margin-left: 25px; /* Adjust the left margin to your preference */
+        font-size: 35px;
+        font-weight: bold;
+    }
+</style>
+
+<h2 class="update-heading">Update Package</h2>
+<div class="container">
+    <div class="col-lg-6">
+        @using (Html.BeginForm("UpdatePackage", "Admin", FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data", @class = "form-horizontal" }))
+        {
+            @Html.HiddenFor(model => model.id)
+
+            <div class="form-group">
+                <label class="control-label">Package Name:</label>
+                @Html.TextBoxFor(model => model.Offer, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Offer, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Package Image:</label>
+                <input type="file" name="Image" class="form-control" />
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Description:</label>
+                @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Update Package" class="btn btn-add" />
+            </div>
+
+            <div class="form-group">
+                <h3 class="success-message">@ViewBag.Message</h3>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "Deal1";
+    Layout = "~/Views/Shared/_UserLayoutPage1.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deal 1</title>
+
+    <!-- swiper css link  -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="~/styles/styles.css">
+
+</head>
+<style>
+
+    .headingdeal {
+        background-size: cover !important;
+        background-position: center !important;
+        padding-top: 20rem;
+        padding-bottom: 35rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .amooo {
+        flex: 1 1 41rem;
+        padding: 5rem;
+        padding-left: 20rem;
+        padding-right: 50rem;
+        background-color: white;
+    }
+
+        .amooo h3 {
+            font-size: 3rem;
+            color: var(--black);
+        }
+
+        .amooo p {
+            font-size: 1.5rem;
+            padding: 1rem 0;
+            line-height: 2;
+            color: var(--black);
+        }
+
+    .header .logo-img {
+        width: 13rem; /* Adjust the width as needed */
+        height: 7rem; /* Adjust the height as needed */
+    }
+</style>
+<body>
+
+    <div class="headingdeal" style="background:url(~/images/deal1H.jpeg) no-repeat">
+        <!--<h1>Deal 1</h1> -->
+    </div>
+
+ 
+    <section class="home-about">
+
+        <div class="image">
+            <img src="~/images/deal1D.jfif" alt="">
+        </div>
+
+        <div class="content">
+            <h3>Offer</h3>
+            <p>Up to 12% discount on domestic and international flight bookings</p>
+            <h3>Validity</h3>
+            <p>Valid till 30 Jun, 2023</p>
+
+            <a href="@Url.Action("Reserve", "User")" class="btn">BOOK NOW</a>
+        </div>
+
+    </section>
+
+    <div class="amooo">
+        <h3>Terms & Conditions</h3>
+        <p>
+            • Up to 12% discount on selected domestic and international flight bookings only<br>
+            • No maximum discount amount<br>
+            • No minimum purchase amount<br>
+            • Applicable on online bookings only<br>
+            • Applicable on selected routes and airlines<br>
+            • Offer cannot be clubbed with any other deal/offer<br>
+            • Valid till 30th June 2023<br>
+            • Cost for customizations, add-ons, sub-options and anything not included in the basic package will have to be paid in the full amount<br>
+            • No discount will be applied on any changes related to dates, no. of people and any other subject after booking<br>
+            • Discount is not applicable on Taxes and Convenience Fee (bank transaction charges)
+        </p>
+    </div>
+
+
+    
+    <!-- swiper js link  -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="~/Scripts/script.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Web_Project_Tour_and_Travel.Models.Pkg>
+@{
+    ViewBag.Title = "Packages";
+    Layout = "~/Views/Shared/_UserLayoutPage1.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="@Url.Content("~/styles/styles.css")">
+</head>
+<body>
+    <div class="heading" style="background:url('@Url.Content("~/images/header-bg-2.png")') no-repeat center center/cover;">
+        <h1>Packages</h1>
+    </div>
+
+    <div class="main" style="margin-top: 50px;"></div>
+
+    <section class="home-packages">
+        <h1 class="heading-title">Our Packages</h1>
+        <div class="box-container">
+            @foreach (var item in Model)
+            {
+                var img = Url.Content("~/Images/" + System.IO.Path.GetFileName(item.Image));
+                <div class="box">
+                    <div class="image">
+                        <img src="@img" alt="Package Image">
+                    </div>
+                    <div class="content">
+                        <h3>@item.Offer</h3>
+                        <p>@item.Description</p>
+                        <a href="@Url.Action("Reserve", "User")" class="btn btn-info">Book Now</a>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="load-more"><span class="btn">Load More</span></div>
+    </section>
+</body>
+</html>
