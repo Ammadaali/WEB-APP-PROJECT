@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Web_Project_Tour_and_Travel.Models.Services>
+@{
+    ViewBag.Title = "Services";
+    Layout = "~/Views/Shared/_UserLayoutPage1.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="@Url.Content("~/styles/styles.css")">
+</head>
+<body>
+    <div class="heading" style="background:url('@Url.Content("~/images/header-bg-2.png")') no-repeat center center/cover;">
+        <h1>Services</h1>
+    </div>
+
+    <div class="main" style="margin-top: 50px;"></div>
+
+    <section class="services">
+        <h1 class="heading-title"> our services </h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="@Url.Content("~/images/icon-1.png")" alt="">
+                <h3>adventure</h3>
+            </div>
+            <div class="box">
+                <img src="@Url.Content("~/images/icon-2.png")" alt="">
+                <h3>tour guide</h3>
+            </div>
+            <div class="box">
+                <img src="@Url.Content("~/images/icon-3.png")" alt="">
+                <h3>tracking</h3>
+            </div>
+            <div class="box">
+                <img src="@Url.Content("~/images/icon-4.png")" alt="">
+                <h3>camp fire</h3>
+            </div>
+            <div class="box">
+                <img src="@Url.Content("~/images/icon-5.png")" alt="">
+                <h3>off road</h3>
+            </div>
+            <div class="box">
+                <img src="@Url.Content("~/images/icon-6.png")" alt="">
+                <h3>camping</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="home-packages">
+        <h1 class="heading-title">Services We Provide</h1>
+        <div class="box-container">
+            @foreach (var item in Model)
+            {
+                var img = Url.Content("~/Images/" + System.IO.Path.GetFileName(item.Image));
+                <div class="box">
+                    <div class="image">
+                        <img src="@img" alt="Service Image">
+                    </div>
+                    <div class="content">
+                        <h3>@item.Service</h3>
+                        <p>@item.Description</p>
+
+                    </div>
+                </div>
+            }
+        </div>
+
+    </section>
+</body>
+</html>

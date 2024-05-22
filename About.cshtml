@@ -1,0 +1,159 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_UserLayoutPage1.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    <!-- swiper css link  -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="@Url.Content("~/styles/styles.css")">
+</head>
+<body>
+
+    <div class="heading" style="background:url(@Url.Content("~/images/header-bg-1.png")) no-repeat">
+        <h1>about us</h1>
+    </div>
+
+    <section class="about">
+        <div class="image">
+            <img src="@Url.Content("~/images/newpic6.jpg")" alt="">
+        </div>
+
+        <div class="content">
+            <h3>why choose us?</h3>
+            <p>Zetoon Travel and Tour providing comprehensive tour services for individual, groups, couples, School Colleges, Academies and Universities.</p>
+            <p>Also provide quality packages in very cheapest price on many different occasions with professional tour guides.</p>
+            <div class="icons-container">
+                <div class="icons">
+                    <i class="fas fa-map"></i>
+                    <span>top destinations</span>
+                </div>
+                <div class="icons">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <span>affordable price</span>
+                </div>
+                <div class="icons">
+                    <i class="fas fa-headset"></i>
+                    <span>24/7 guide service</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- reviews section starts  -->
+    <section class="reviews">
+        <h1 class="heading-title"> clients reviews </h1>
+        <div class="swiper-container reviews-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Guys always helpful.</p>
+                    <h3>AHMED</h3>
+                    <span>traveler</span>
+                    <img src="@Url.Content("~/images/pic-1.png")" alt="">
+                </div>
+                <div class="swiper-slide slide">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Very happy with everything thank you.</p>
+                    <h3>SARA</h3>
+                    <span>traveler</span>
+                    <img src="@Url.Content("~/images/pic-2.png")" alt="">
+                </div>
+                <div class="swiper-slide slide">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Service was excellent.</p>
+                    <h3>HUZAIFA</h3>
+                    <span>traveler</span>
+                    <img src="@Url.Content("~/images/pic-3.png")" alt="">
+                </div>
+                <div class="swiper-slide slide">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Great service</p>
+                    <h3>FATIMA</h3>
+                    <span>traveler</span>
+                    <img src="@Url.Content("~/images/pic-4.png")" alt="">
+                </div>
+                <div class="swiper-slide slide">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Prompt and efficient service.</p>
+                    <h3>MUHAMMAD ALI</h3>
+                    <span>traveler</span>
+                    <img src="@Url.Content("~/images/pic-5.png")" alt="">
+                </div>
+                <div class="swiper-slide slide">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Thanks for all your help.</p>
+                    <h3>ZAINAB</h3>
+                    <span>traveler</span>
+                    <img src="@Url.Content("~/images/pic-6.png")" alt="">
+                </div>
+            </div>
+            <!-- Removed the navigation buttons -->
+        </div>
+    </section>
+    <!-- reviews section ends -->
+    <!-- swiper js link  -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="@Url.Content("~/Scripts/script.js")"></script>
+
+    <script>
+        var swiper = new Swiper('.reviews-slider', {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: false, // Disable navigation
+        });
+    </script>
+</body>
+</html>
