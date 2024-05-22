@@ -1,0 +1,175 @@
+﻿@model IEnumerable<Web_Project_Tour_and_Travel.Models.Pkg>
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_UserLayoutPage1.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    <!-- Swiper CSS link -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom CSS file link -->
+    <link rel="stylesheet" href="@Url.Content("~/styles/styles.css")">
+</head>
+<body>
+    <section class="home">
+        <div class="swiper-container home-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide" style="background:url(@Url.Content("~/images/newpic2.jpg")) no-repeat">
+                    <div class="content">
+                        <span>explore, discover, travel</span>
+                        <h3>travel the world with Zetoon</h3>
+                        <a href="@Url.Action("Packages", "User")" class="btn">discover more</a>
+                    </div>
+                </div>
+                <div class="swiper-slide slide" style="background:url(@Url.Content("~/images/home-slide-2.jpg")) no-repeat">
+                    <div class="content">
+                        <span>explore, discover, travel</span>
+                        <h3>discover the new places</h3>
+                        <a href="@Url.Action("Packages", "User")" class="btn">discover more</a>
+                    </div>
+                </div>
+                <div class="swiper-slide slide" style="background:url(@Url.Content("~/images/home-slide-3.jpg")) no-repeat">
+                    <div class="content">
+                        <span>explore, discover, travel</span>
+                        <h3>make your tour worthwhile</h3>
+                        <a href="@Url.Action("Packages", "User")" class="btn">discover more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <!-- Services section starts -->
+    <section class="services">
+        <h1 class="heading-title"> our services </h1>
+        <div class="box-container">
+            <div class="box">
+                <img src="@Url.Content("~/images/icon-1.png")" alt="">
+                <h3>adventure</h3>
+            </div>
+            <div class="box">
+                <img src="@Url.Content("~/images/icon-2.png")" alt="">
+                <h3>tour guide</h3>
+            </div>
+            <div class="box">
+                <img src="@Url.Content("~/images/icon-3.png")" alt="">
+                <h3>tracking</h3>
+            </div>
+            <div class="box">
+                <img src="@Url.Content("~/images/icon-4.png")" alt="">
+                <h3>camp fire</h3>
+            </div>
+            <div class="box">
+                <img src="@Url.Content("~/images/icon-5.png")" alt="">
+                <h3>off road</h3>
+            </div>
+            <div class="box">
+                <img src="@Url.Content("~/images/icon-6.png")" alt="">
+                <h3>camping</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hot deals section starts -->
+    <section class="hot-deals">
+        <h2>Discounts Available</h2>
+        <div class="hot-deals-container">
+            <div class="deal">
+                <img src="@Url.Content("~/images/deal1.jpg")" alt="Deal 1">
+                <h3>Deal 1</h3>
+                <p>For online flight bookings only. Till 30th June, 2023. On Selected Domestic and International Flight Bookings</p>
+                <a href="@Url.Action("Deal1", "User")" class="btn2">Learn More</a>
+            </div>
+            <div class="deal">
+                <img src="@Url.Content("~/images/deal2.jpg")" alt="Deal 2">
+                <h3>Deal 2</h3>
+                <p>On base fare, for Bank Alfalah, Standard Chartered, Bank of Punjab, Faysal Bank, Allied Bank, Meezan Bank cards, JS Bank</p>
+                <a href="@Url.Action("Deal2", "User")" class="btn2">Learn More</a>
+            </div>
+            <div class="deal">
+                <img src="@Url.Content("~/images/deal3.jpg")" alt="Deal 3">
+                <h3>Deal 3</h3>
+                <p>For Bank Alfalah, Standard Chartered, Bank of Punjab, Faysal Bank, Allied Bank, Meezan Bank, JS Bank cards</p>
+                <a href="@Url.Action("Deal3", "User")" class="btn2">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Home about section starts -->
+    <section class="home-about">
+        <div class="image">
+            <img src="@Url.Content("~/images/newpic6.jpg")" alt="">
+        </div>
+        <div class="content">
+            <h3>about us</h3>
+            <p>Zetoon Travel and Tours is the Largest and most reliable tourism company in Pakistan with lots of satisfied clients and we have arranged almost over 500 tours successfully. We offer tour to Hunza Valley, Naltar Valley, Swat, Naran / Kaghan, Khunjrab Pass, Fairy Meadows, and many more incredible places around Pakistan. We arrange Family tours, Co-oporate tours, Group tours and Honeymoon tours for our valuable clients. With large numbers of fans, we became the largest tourism company in Pakistan. We also arrange tours for foreigners who came to Pakistan and Explore nature’s beauty at it’s best. So, pack your bags and visit your dream places in Pakistan.</p>
+            <a href="@Url.Action("About", "User")" class="btn">read more</a>
+        </div>
+    </section>
+
+    <!-- Home packages section starts -->
+    <section class="home-packages">
+        <h1 class="heading-title"> our packages </h1>
+        <div class="box-container">
+            @foreach (var item in Model)
+            {
+                var img = Url.Content("~/Images/" + System.IO.Path.GetFileName(item.Image));
+                <div class="box">
+                    <div class="image">
+                        <img src="@img" alt="Package Image">
+                    </div>
+                    <div class="content">
+                        <h3>@item.Offer</h3>
+                        <p>@item.Description</p>
+                        <a href="@Url.Action("Reserve", "User")" class="btn">book now</a>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="load-more"> <a href="@Url.Action("Packages", "User")" class="btn">load more</a> </div>
+    </section>
+
+    <!-- Home offer section starts -->
+    <section class="home-offer">
+        <div class="content">
+            <h3>upto 50% off</h3>
+            <p>We offer 50% discounts on Islamic events like Ramadan-ul-Mubarak, Eid-ul-Adha, Eid-ul-Fitr, Muharam, Rabi-ul-Awal</p>
+            <a href="@Url.Action("Reserve", "User")" class="btn">book now</a>
+        </div>
+    </section>
+
+    <!-- Swiper JS link -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- Custom JS file link -->
+    <script src="@Url.Content("~/Scripts/script.js")"></script>
+
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            effect: 'slide',
+        });
+    </script>
+</body>
+</html>
